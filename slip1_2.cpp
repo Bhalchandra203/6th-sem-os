@@ -20,11 +20,8 @@ void fcfs(int arr[], int n, int head)
 	for(int i=0; i<n; i++) 
 	{
 		curr_track = arr[i]; 
-		
 		dist = fabs(head - curr_track);
-	
 		seek_cnt += dist; 
-		
 		head = curr_track;
 	}
 	
