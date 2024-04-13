@@ -7,32 +7,46 @@ of head moments.
      Start Head Position: 48
 */
 
-#include<stdio.h>
-#include<math.h>
+//S1Q1, S9Q2, S17Q2, S21Q1
 
-void FCFS(int arr[] , int size, int head)
+#include <stdio.h>
+#include <math.h>
+
+void fcfs(int arr[], int n, int head) 
 {
-    int curr_head,seek_count =0 ;
-
-    printf("Seek Sequence :");
-    for(int i = 0 ;i<size; i++)
-    {
-        curr_head = arr[0];
-        seek_count += fabs(head - curr_head);
-        head  = curr_head;
-        printf("%d -> " , curr_head);
-    }
-    printf("\nTotal seek sequence :%d" , seek_count);
-
+	int seek_cnt = 0;
+	int curr_track, dist;
+	
+	for(int i=0; i<n; i++) 
+	{
+		curr_track = arr[i]; 
+		dist = fabs(head - curr_track);
+		seek_cnt += dist; 
+		head = curr_track;
+	}
+	
+	printf("Total no. of seek oprations: %d\n", seek_cnt);
+	
+	printf("Seek Sequence is:\n");
+	for(int i=0; i<n; i++)
+	printf("%d\n", arr[i]);
 }
 
-int main()
+int main() 
 {
-        int arr[] = {56, 59, 40, 19, 91, 161, 151, 39, 185 };
-        int size = sizeof(arr)/sizeof(arr[0]);
-        int head = 50;
-
-        FCFS(arr,size,head);
-
-        return 0;
+	int arr[100], n, head;
+	
+	printf("Enter request array size: ");
+	scanf("%d", &n);
+	
+	printf("Enter request array:\n");
+	for(int i=0; i<n; i++)
+		scanf("%d", &arr[i]);
+		
+	printf("Enter initial head position: ");
+	scanf("%d", &head);
+	
+	fcfs(arr, n, head);
+	
+	return 0;
 }
