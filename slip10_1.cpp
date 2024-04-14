@@ -15,6 +15,11 @@ numbers (stored in array) on a cluster
  * run 
  * mpiexec -n 2 Ex1.exe
 */
+/*
+Q.1 Write an MPI program to calculate sum and average of randomly generated 1000  
+numbers (stored in array) on a cluster 
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<mpi.h>
