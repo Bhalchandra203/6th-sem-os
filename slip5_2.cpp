@@ -4,6 +4,7 @@ Q.2 Write an MPI program to find the max number from randomly generated
 */
 
 
+
 #include<stdio.h> 
 #include<stdlib.h> 
 #include<mpi.h> 
